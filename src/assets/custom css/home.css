@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+
+.secondcontext {
+    font-family: 'Itim', cursive;
+    color: #32CD32	;
+}
+.firstcontext{
+    font-family: 'Libre Baskerville', serif;
+    color: 	#8B0000;
+}
+.thirdcontext{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FF4500;
+}
