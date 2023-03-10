@@ -17,4 +17,4 @@ export function AlertModalStateManagementAPI({ children }) {
       {children}
     </AlertStateManagementAPI.Provider> // Returning the Context API
   );
-}
+};
