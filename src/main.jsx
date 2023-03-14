@@ -4,9 +4,9 @@ import ReactDOM from "react-dom/client";
 // importing Router file to Link all Routes with this app
 import RouterFile from "./Router";
 
-/* importing all context api for provide acccess to whole application */
+        /* importing all context api for provide access to whole application */
 
-// import context api for provide acccess to whole application
+// import context api for provide access to whole application
 import { AlertModalStateManagementAPI } from "./API/Context/Alert State Management API"; // Importing the Alert Modal State Management API
 import { AuthStatusManagementAPIProvider } from "./API/Context/Auth Status Management API"; // Importing the Auth Status Management API
 import { ForgetPasswordStateManagementAPI } from "./API/Context/Forget Password State API"; // Importing the Forget Password State Management API

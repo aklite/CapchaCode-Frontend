@@ -1,6 +1,6 @@
 {
   "name": "capchacode",
-  "private": true,
+  "private": false,
   "version": "1.0.5",
   "type": "module",
   "scripts": {
