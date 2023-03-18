@@ -12,7 +12,7 @@ export async function Signup_Function(UserDataJSON) {
     let tempresponse = confirm("Are you sure? your data is correct?");
     if (tempresponse) {
       let response = await POST_Request(
-        `/live/post/auth/CreateCustomerAccount`,
+        `/live/put/auth/CreateCustomerAccount`,
         UserDataJSON
       );
       return response;

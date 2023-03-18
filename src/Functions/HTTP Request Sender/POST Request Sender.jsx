@@ -2,6 +2,7 @@ import { hostname } from "../../Variables/Non-Changable Variables"; // Import No
 
 // POST Request Function
 export const POST_Request = async (url, data) => {
+  console.log(data);
   let response = await fetch(hostname + url, {
     method: "POST",
     headers: {

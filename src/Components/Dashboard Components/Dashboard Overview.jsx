@@ -30,10 +30,12 @@ export default function Dashboard_Overview() {
 
   // Fetching all account details from server using POST Request
   useEffect(() => {
+    console.log('fwsfwreg');
     POST_Request("/live/post/info/client-account-info", {
       Email: authStatus.Email,
-      AccountID: authStatus.AccountID,
+      AccountID: authStatus.AccountID
     }).then((reponse) => {
+      console.log(reponse);
       // validate if Domains is not empty
       if (reponse.Domain.length === 0) {
         reponse.Domain.push({
@@ -50,7 +52,7 @@ export default function Dashboard_Overview() {
       // adding DomainDetails in Data
       reponse.Data.DomainDetails = reponse.Domain; // adding DomainDetails in Data
       UpdateAccountDetails(reponse.Data); // updating the account details
-      setLoad(false); // loading state false
+      setLoad(false); // loading state fals
     });
   }, []); // end of using all effect functions  for fetching all account details from server
 
