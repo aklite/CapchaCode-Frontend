@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tailwindcss build -i ./public/css/tailwindInput.css -o ./public/css/tailwindoutput.css -c ./tailwind.config.cjs --minify && vite build",
+    "buildcss":"tailwindcss build -i ./public/css/tailwindInput.css -o ./public/css/tailwindoutput.css -c ./tailwind.config.cjs --minify",
     "preview": "vite preview"
   },
   "dependencies": {
