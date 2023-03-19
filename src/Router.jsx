@@ -7,6 +7,7 @@ import "flowbite";
 import "@mui/material";
 import "@emotion/react";
 import "@emotion/styled";
+import './assets/Tailwind/tailwindoutput.css'; // Importing the Tailwind CSS
 
 // import all essential components & pages
 import Homepage from "./Pages/Home/HomePage"; // Importing the Homepage
