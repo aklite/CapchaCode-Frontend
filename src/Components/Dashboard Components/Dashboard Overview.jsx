@@ -6,6 +6,8 @@ import Loader from "../../Components/Regular Components/Loading"; // Import Load
 
 // Importing all Context API
 import { AuthStatusManagementAPI } from "../../API/Context/Auth Status Management API"; // Import Auth Status Management API.jsx
+// Importing all Context API
+import { DashboardComponentsStateManagerContext } from "../../API/Context/Dashboard Components  State Manager API"; // Import Dashboard Components State Manager API.jsx
 
 // import all effect functions of Dashboard
 import Update_Title from "../../API/Effect/Update Document Title"; // Import Update Document Title.jsxx
@@ -19,6 +21,11 @@ export default function Dashboard_Overview() {
   let { authStatus, FullaccountDetails, UpdateAccountDetails } = useContext(
     AuthStatusManagementAPI
   ); // Call Auth Status Management API.jsx
+
+    // initializing the context api
+    let {UpdateDefaultPageState } = useContext(
+      DashboardComponentsStateManagerContext
+    ); // Call  API.jsx
 
   // using all effect functions
   Update_Title(`Dashboard Overview - ${authStatus.Name}`); // updating the document title
@@ -37,11 +44,12 @@ export default function Dashboard_Overview() {
       // validate if Domains is not empty
       if (reponse.Domain.length === 0) {
         reponse.Domain.push({
+          _id:"4545ffgergerg15151",
           Hostname: "0.0.0.0:3000",
           AccountID: authStatus.AccountID,
           AddedDate: Date.now(),
           LastUpdatedDate: Date.now(),
-          Status: true,
+          Status: false,
           CurrentCapcha: [],
           CaptchaType: "None",
         });
@@ -161,6 +169,7 @@ export default function Dashboard_Overview() {
                 </p>
                 <button
                   type="button"
+                  onClick={()=>{UpdateDefaultPageState("ViewAllDomain");}}
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-red-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
                 >
                   View All Domains

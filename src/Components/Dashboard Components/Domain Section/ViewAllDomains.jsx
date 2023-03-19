@@ -1,15 +1,23 @@
 // importing all essential modules
 import React, { useContext } from "react"; // Importing React,  useContext & useState hook
+// import Button from Matreial UI
+import {Link} from 'react-router-dom'; // Importing Link from react-router-dom
 
 // importing all essential APIs from the API folder
-import { AuthStatusManagementAPI } from "../../API/Context/Auth Status Management API"; // Importing Auth Status Management API
-import Update_Title from "../../API/Effect/Update Document Title"; // Import Update Document Title.jsxx
+import { AuthStatusManagementAPI } from "../../../API/Context/Auth Status Management API"; // Importing Auth Status Management API
+import { DashboardComponentsStateManagerContext } from "../../../API/Context/Dashboard Components  State Manager API"; // Import Dashboard Components State Manager API.jsx
+
+import Update_Title from "../../../API/Effect/Update Document Title"; // Import Update Document Title.jsxx
 
 // importing Sidebar & Navbar components
-import Sidebar from "../../Components/Dashboard Components/Sidebar/Sidebar"; // Importing Sidebar component
+import Sidebar from "../Sidebar/Sidebar"; // Importing Sidebar component
 
 export default function ViewAllDomains() {
   let { FullaccountDetails, authStatus } = useContext(AuthStatusManagementAPI); // Destructuring Auth Status Management API
+  let { UpdateDefaultPageState } = useContext(
+    DashboardComponentsStateManagerContext
+  ); // Call Dashboard Components State Manager API.jsx
+
   // update Page Title
   Update_Title(`View All Domains - ${authStatus.Name}`); // updating the document title
   return (
@@ -64,12 +72,7 @@ export default function ViewAllDomains() {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <a
-                      href="#"
-                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                      Edit user
-                    </a>
+                  <Link className="bg-green-500 text-white px-10 py-2 rounded-full" to={`/view/${SingleDomainData._id}`}> Go </Link>
                   </td>
                 </tr>
               );

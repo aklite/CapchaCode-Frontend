@@ -15,6 +15,7 @@ import SignupPage from "./Pages/Auth/SignupPage"; // Importing the Signup Page
 import LoginPage from "./Pages/Auth/LoginPage"; // Importing the Login Page
 import Forget_PasswordPage from "./Pages/Auth/Forget Password Page"; // Importing the Forget Password Page
 import Dashboard from "./Pages/Dashboard/Dashboard"; // Importing the Dashboard Page
+import ViewSingleDomainDetails from "./Components/Dashboard Components/Domain Section/Domain Details";
 
 function RouterFile() {
   return (
@@ -25,6 +26,7 @@ function RouterFile() {
               <Route path="/login" exac element={<LoginPage />} />
               <Route path="/forgot-password" exac element={<Forget_PasswordPage/>}/>
               <Route path="/dashboard" exac element={<Dashboard />}/>
+              <Route path="/view/:id" exac element={<ViewSingleDomainDetails />}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>

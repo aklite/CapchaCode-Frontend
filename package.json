@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tailwindcss build -i ./public/css/tailwindInput.css -o ./public/css/tailwindoutput.css -c ./tailwind.config.cjs --minify && vite build",
-    "buildcss":"tailwindcss build -i ./public/css/tailwindInput.css -o ./public/css/tailwindoutput.css -c ./tailwind.config.cjs --minify",
+    "buildcss": "tailwindcss build -i ./public/css/tailwindInput.css -o ./public/css/tailwindoutput.css -c ./tailwind.config.cjs --minify",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@mui/material": "^5.11.8",
     "autoprefixer": "^10.4.13",
     "flowbite": "^1.6.3",
+    "moment": "^2.29.4",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

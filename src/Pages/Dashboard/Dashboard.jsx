@@ -11,12 +11,13 @@ import { DashboardComponentsStateManagerContext } from "../../API/Context/Dashbo
 
 // importing all sub components of Dashboard
 import Dashboard_Overview from "../../Components/Dashboard Components/Dashboard Overview"; // Import Dashboard Overview.jsx
-import ViewAllDomains from "../../Components/Dashboard Components/ViewAllDomains"; // Import ViewAllDomains.jsx
+import ViewAllDomains from "../../Components/Dashboard Components/Domain Section/ViewAllDomains"; // Import ViewAllDomains.jsx
+import ViewSingleDomainDetails from "../../Components/Dashboard Components/Domain Section/Domain Details";
 
 function Dashboard() {
   // initializing the context api
   let { authStatus } = useContext(AuthStatusManagementAPI); // Call Auth Status Management API.jsx
-  let { DashboardDefaultPageState, UpdateDomainAddPageState } = useContext(
+  let { DashboardDefaultPageState } = useContext(
     DashboardComponentsStateManagerContext
   ); // Call Dashboard Components State Manager API.jsx
 
