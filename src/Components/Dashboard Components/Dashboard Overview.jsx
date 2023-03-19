@@ -30,12 +30,10 @@ export default function Dashboard_Overview() {
 
   // Fetching all account details from server using POST Request
   useEffect(() => {
-    console.log('fwsfwreg');
     POST_Request("/live/post/info/client-account-info", {
       Email: authStatus.Email,
       AccountID: authStatus.AccountID
     }).then((reponse) => {
-      console.log(reponse);
       // validate if Domains is not empty
       if (reponse.Domain.length === 0) {
         reponse.Domain.push({

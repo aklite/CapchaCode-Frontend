@@ -8,7 +8,7 @@ import AnkanSaha_Founder from "../assets/images/Ankan Saha_Founder.svg"; // impo
 export const Founders_Details = [
   {
     Name: "Ankan Saha",
-    Pic: "https://scontent.frdp4-1.fna.fbcdn.net/v/t39.30808-6/311588625_163021206371862_7785006304850070727_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=M9-UPNzodhYAX9upPH3&_nc_ht=scontent.frdp4-1.fna&oh=00_AfDMhVkqHtctYdRboqvuCGztivzUMSYOc0_L5CIjIFRCtA&oe=63FD1C14",
+    Pic: "https://scontent.fccu13-1.fna.fbcdn.net/v/t39.30808-6/317369803_172814608725855_8926749422728987776_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Fc3NsWoMMQcAX_5Cp9q&_nc_ht=scontent.fccu13-1.fna&oh=00_AfDxKQf6XkM9Avl7mD-tf7s9ewmzbfb0bgvmAgEIDkhTrw&oe=641B638B",
     Position: "Full Stack Web Developer",
     Facebook: "https://facebook.com/theankansaha",
     Instagram: "https://instagram.com/theankansaha",

@@ -11,6 +11,7 @@ import { DashboardComponentsStateManagerContext } from "../../API/Context/Dashbo
 
 // importing all sub components of Dashboard
 import Dashboard_Overview from "../../Components/Dashboard Components/Dashboard Overview"; // Import Dashboard Overview.jsx
+import ViewAllDomains from "../../Components/Dashboard Components/ViewAllDomains"; // Import ViewAllDomains.jsx
 
 function Dashboard() {
   // initializing the context api
@@ -29,6 +30,11 @@ function Dashboard() {
             <>
               <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
               <Dashboard_Overview />
+            </>
+          ) : DashboardDefaultPageState === "ViewAllDomain" ? (
+            <>
+             <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
+            <ViewAllDomains />
             </>
           ) : null}
         </>
