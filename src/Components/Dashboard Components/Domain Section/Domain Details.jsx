@@ -32,9 +32,9 @@ export default function ViewSingleDomainDetails() {
   return (
     <>
       <Navbar CurrentNavbarName={FilteredData[0].Hostname} />
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center h-screen bg-white">
         <h1 className="text-4xl font-bold mb-8">Domain Full Details</h1>
-        <div className="bg-gray-200 rounded-md p-4 w-[98%] max-w-lg mx-5">
+        <div className="rounded-md p-4 w-[98%] max-w-lg mx-5 shadow-2xl bg-slate-300">
           {FilteredData.map((SingleData, Key) => {
             // Parsing the Added Date
             let ParseAdddedDate = utc(SingleData.AddedDate).format(

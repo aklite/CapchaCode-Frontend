@@ -12,7 +12,7 @@ import { DashboardComponentsStateManagerContext } from "../../API/Context/Dashbo
 // importing all sub components of Dashboard
 import Dashboard_Overview from "../../Components/Dashboard Components/Dashboard Overview"; // Import Dashboard Overview.jsx
 import ViewAllDomains from "../../Components/Dashboard Components/Domain Section/ViewAllDomains"; // Import ViewAllDomains.jsx
-import ViewSingleDomainDetails from "../../Components/Dashboard Components/Domain Section/Domain Details";
+import AddDomain from "../../Components/Dashboard Components/Domain Section/Add Domain"; // Import AddDomain.jsx
 
 function Dashboard() {
   // initializing the context api
@@ -36,6 +36,11 @@ function Dashboard() {
             <>
              <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
             <ViewAllDomains />
+            </>
+          ) : DashboardDefaultPageState === "AddNewDomain" ? (
+            <>
+            <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
+            <AddDomain/>
             </>
           ) : null}
         </>
