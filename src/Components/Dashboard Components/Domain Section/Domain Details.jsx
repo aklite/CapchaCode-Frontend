@@ -1,7 +1,10 @@
 // Importing all essential modules
 import React, { useContext } from "react"; // Import React & React Hooks
-import { useParams, Link } from "react-router-dom"; // Importing Link from react-router-dom
+import { useParams, Link, useNavigate } from "react-router-dom"; // Importing Link from react-router-dom
 import { utc } from "moment/moment"; // Importing moment.js
+
+// import Button from  Material UI
+import { Button } from "@mui/material"; // Importing Button from Material UI
 
 // Importing all essential components
 import Navbar from "../../Regular Components/Navbar"; // Import Navbar component
@@ -10,7 +13,11 @@ import Footer from "../../Regular Components/Footer"; // Import Footer component
 // import all essential APIs from the API folder
 import { AuthStatusManagementAPI } from "../../../API/Context/Auth Status Management API"; // Importing Auth Status Management API
 
+// import function from the API folder
+import Update_Document_Title from "../../../API/Effect/Update Document Title"; // Importing Update Document Title function
+
 export default function ViewSingleDomainDetails() {
+  let PageNavigator = useNavigate(); // Destructuring useNavigate hook
   let { id } = useParams(); // Destructuring useParams hook
 
   let { FullaccountDetails } = useContext(AuthStatusManagementAPI); // Destructuring Auth Status Management API
@@ -19,9 +26,12 @@ export default function ViewSingleDomainDetails() {
     (Data) => Data._id === id
   ); // Filtering the Domain Details
 
+  // update document title
+  Update_Document_Title(`${FilteredData[0].Hostname} - Domain Full Details`);
+
   return (
     <>
-      <Navbar />
+      <Navbar CurrentNavbarName={FilteredData[0].Hostname} />
       <div className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-4xl font-bold mb-8">Domain Full Details</h1>
         <div className="bg-gray-200 rounded-md p-4 w-[98%] max-w-lg mx-5">
@@ -55,13 +65,38 @@ export default function ViewSingleDomainDetails() {
                     <strong>Status: </strong>{" "}
                     {SingleData.Status === true ? "Active" : "Inactive"}
                   </p>
-                  <Link
-                    className="mt-12 ml-[8rem] lg:ml-[12.25rem] bg-blue-600 px-5 text-white py-2 rounded-md hover:bg-blue-700"
-                    to="/dashboard"
-                  >
-                    Go Back
-                  </Link>
                 </div>
+                <Button
+            onClick={() => {
+              PageNavigator("/dashboard");
+            }}
+            variant="contained"
+            color="info"
+            style={{ marginLeft: 118.25 }}
+          >
+            Go Back
+          </Button>
+          {FullaccountDetails.DomainDetails.length === 1 || SingleData.Hostname === "0.0.0.0:3000"  ? (
+            <Button
+              variant="contained"
+              color="error"
+              style={{ marginLeft: 118.25, marginTop: 15 }}
+              disabled
+            >
+              Delete
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                PageNavigator("/dashboard");
+              }}
+              variant="contained"
+              color="error"
+              style={{ marginLeft: 118.25, marginTop: 15 }}
+            >
+              Delete
+            </Button>
+          )}
               </>
             );
           })}

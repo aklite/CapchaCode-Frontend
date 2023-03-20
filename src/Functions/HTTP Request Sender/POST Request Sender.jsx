@@ -8,7 +8,7 @@ export const POST_Request = async (url, data) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  });
-  let result = await response.json();
-  return result;
+  })
+  
+  return await response.json();
 };

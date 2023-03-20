@@ -27,7 +27,7 @@ function RouterFile() {
               <Route path="/login" exac element={<LoginPage />} />
               <Route path="/forgot-password" exac element={<Forget_PasswordPage/>}/>
               <Route path="/dashboard" exac element={<Dashboard />}/>
-              <Route path="/view/:id" exac element={<ViewSingleDomainDetails />}/>
+              <Route path="/Domains/:id" exac element={<ViewSingleDomainDetails />}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>

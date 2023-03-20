@@ -72,7 +72,7 @@ export default function ViewAllDomains() {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                  <Link className="bg-green-500 text-white px-10 py-2 rounded-full" to={`/view/${SingleDomainData._id}`}> Go </Link>
+                  <Link className="bg-green-500 text-white px-10 py-2 rounded-full" to={`/Domains/${SingleDomainData._id}`}> Go </Link>
                   </td>
                 </tr>
               );

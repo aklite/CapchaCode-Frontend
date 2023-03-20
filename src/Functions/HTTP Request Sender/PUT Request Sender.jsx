@@ -9,6 +9,6 @@ export const PUT_Request = async (url, data) => {
     },
     body: JSON.stringify(data),
   });
-  let result = await response.json();
-  return result;
+  
+  return await response.json();
 };
