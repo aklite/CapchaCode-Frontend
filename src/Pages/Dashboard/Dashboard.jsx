@@ -34,13 +34,13 @@ function Dashboard() {
             </>
           ) : DashboardDefaultPageState === "ViewAllDomain" ? (
             <>
-             <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
-            <ViewAllDomains />
+              <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
+              <ViewAllDomains />
             </>
           ) : DashboardDefaultPageState === "AddNewDomain" ? (
             <>
-            <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
-            <AddDomain/>
+              <Navbar CurrentNavbarName={`${authStatus.Name}'s Panel`} />
+              <AddDomain />
             </>
           ) : null}
         </>

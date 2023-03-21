@@ -22,10 +22,10 @@ export default function Dashboard_Overview() {
     AuthStatusManagementAPI
   ); // Call Auth Status Management API.jsx
 
-    // initializing the context api
-    let {UpdateDefaultPageState } = useContext(
-      DashboardComponentsStateManagerContext
-    ); // Call  API.jsx
+  // initializing the context api
+  let { UpdateDefaultPageState } = useContext(
+    DashboardComponentsStateManagerContext
+  ); // Call  API.jsx
 
   // using all effect functions
   Update_Title(`Dashboard Overview - ${authStatus.Name}`); // updating the document title
@@ -39,12 +39,12 @@ export default function Dashboard_Overview() {
   useEffect(() => {
     POST_Request("/live/post/info/client-account-info", {
       Email: authStatus.Email,
-      AccountID: authStatus.AccountID
+      AccountID: authStatus.AccountID,
     }).then((reponse) => {
       // validate if Domains is not empty
       if (reponse.Domain.length === 0) {
         reponse.Domain.push({
-          _id:"4545ffgergerg15151",
+          _id: "4545ffgergerg15151",
           Hostname: "0.0.0.0:3000",
           AccountID: authStatus.AccountID,
           AddedDate: Date.now(),
@@ -90,7 +90,7 @@ export default function Dashboard_Overview() {
             <div className="flex flex-wrap">
               {/* total capcha served */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Total Captcha Served
                   </h5>
@@ -103,7 +103,7 @@ export default function Dashboard_Overview() {
 
               {/* Account status  */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Your Account Status
                   </h5>
@@ -114,7 +114,7 @@ export default function Dashboard_Overview() {
               </div>
 
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Your Captcha Type
                   </h5>
@@ -127,7 +127,7 @@ export default function Dashboard_Overview() {
 
               {/* total points */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Your Current Balance
                   </h5>
@@ -159,7 +159,7 @@ export default function Dashboard_Overview() {
 
               {/* total domains */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Your Activated Domains
                   </h5>
@@ -169,7 +169,9 @@ export default function Dashboard_Overview() {
                 </p>
                 <button
                   type="button"
-                  onClick={()=>{UpdateDefaultPageState("ViewAllDomain");}}
+                  onClick={() => {
+                    UpdateDefaultPageState("ViewAllDomain");
+                  }}
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-red-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
                 >
                   View All Domains
@@ -191,7 +193,7 @@ export default function Dashboard_Overview() {
 
               {/* Add new domain */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Add New Domain
                   </h5>
@@ -202,7 +204,9 @@ export default function Dashboard_Overview() {
                 </p>
                 <button
                   type="button"
-                  onClick={()=>{UpdateDefaultPageState("AddNewDomain");}}
+                  onClick={() => {
+                    UpdateDefaultPageState("AddNewDomain");
+                  }}
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-red-700 dark:focus:ring-blue-800"
                 >
                   Add New Domain
@@ -223,7 +227,7 @@ export default function Dashboard_Overview() {
               </div>
 
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     View Last Payments History
                   </h5>
@@ -255,7 +259,7 @@ export default function Dashboard_Overview() {
 
               {/* Account Details */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     View Account Details
                   </h5>
@@ -287,7 +291,7 @@ export default function Dashboard_Overview() {
 
               {/* get API Key */}
               <div className="mx-6 max-w-sm p-6 mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                <a>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Get API Key & Snippet
                   </h5>

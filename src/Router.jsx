@@ -7,6 +7,7 @@ import "flowbite";
 import "@mui/material";
 import "@emotion/react";
 import "@emotion/styled";
+import "daisyui";
 import './assets/Tailwind/tailwindoutput.css'; // Importing the Tailwind CSS
 
 // import all essential components & pages
