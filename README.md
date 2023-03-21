@@ -3,7 +3,6 @@
  This is a React application, developed to provide CAPTCHA service for user login on website &amp; managing their account with GUI. 
 ## Installation 💡 
  npm install
-npm run dev 
 ## App features 🪐
  - Add Domain To Account
 - Create Account
