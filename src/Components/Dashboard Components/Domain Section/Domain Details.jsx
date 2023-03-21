@@ -67,36 +67,59 @@ export default function ViewSingleDomainDetails() {
                   </p>
                 </div>
                 <Button
-            onClick={() => {
-              PageNavigator("/dashboard");
-            }}
-            variant="contained"
-            color="info"
-            style={{ marginLeft: 118.25 }}
-          >
-            Go Back
-          </Button>
-          {FullaccountDetails.DomainDetails.length === 1 || SingleData.Hostname === "0.0.0.0:3000"  ? (
-            <Button
-              variant="contained"
-              color="error"
-              style={{ marginLeft: 118.25, marginTop: 15 }}
-              disabled
-            >
-              Delete
-            </Button>
-          ) : (
-            <Button
-              onClick={() => {
-                PageNavigator("/dashboard");
-              }}
-              variant="contained"
-              color="error"
-              style={{ marginLeft: 118.25, marginTop: 15 }}
-            >
-              Delete
-            </Button>
-          )}
+                  onClick={() => {
+                    PageNavigator("/dashboard");
+                  }}
+                  variant="contained"
+                  color="info"
+                  style={{ marginLeft: 18.25 }}
+                >
+                  Go Back
+                </Button>
+                {FullaccountDetails.DomainDetails.length === 1 ||
+                SingleData.Hostname === "0.0.0.0:3000" ? (
+                  <>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      style={{ marginLeft: 18.25 }}
+                      disabled
+                    >
+                      Delete
+                    </Button>
+                    <Button
+                      disabled
+                      variant="contained"
+                      color="primary"
+                      style={{ marginLeft: 18.25 }}
+                    >
+                      Edit
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      onClick={() => {
+                        PageNavigator("/dashboard");
+                      }}
+                      variant="contained"
+                      color="error"
+                      style={{ marginLeft: 18.25 }}
+                    >
+                      Delete
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        PageNavigator("/dashboard");
+                      }}
+                      variant="contained"
+                      color="primary"
+                      style={{ marginLeft: 18.25 }}
+                    >
+                      Edit
+                    </Button>
+                  </>
+                )}
               </>
             );
           })}

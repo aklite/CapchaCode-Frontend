@@ -1,5 +1,6 @@
 // importing all essential modules
 import React, { useContext } from "react"; // Importing React,  useContext & useState hook
+import { utc } from "moment/moment"; // Importing moment.js
 // import Button from Matreial UI
 import {Link} from 'react-router-dom'; // Importing Link from react-router-dom
 
@@ -43,6 +44,9 @@ export default function ViewAllDomains() {
           </thead>
           <tbody>
             {FullaccountDetails.DomainDetails.map((SingleDomainData, Key) => {
+              let Parshed_Domain_Added_date = utc(SingleDomainData.AddedDate).format(
+                "DD/MM/YYYY"
+              );
               return (
                 <tr key={Key} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                   <th
@@ -54,7 +58,7 @@ export default function ViewAllDomains() {
                         {SingleDomainData.Hostname}
                       </div>
                       <div className="font-normal text-gray-500">
-                        {SingleDomainData.AddedDate}
+                        Added Date : {Parshed_Domain_Added_date}
                       </div>
                     </div>
                   </th>
